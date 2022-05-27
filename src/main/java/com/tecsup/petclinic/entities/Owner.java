@@ -1,5 +1,6 @@
 package com.tecsup.petclinic.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,8 +13,10 @@ public class Owner {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private long id;
-	private String first_name;
-	private String last_name;
+	@Column(name="first_name")
+	private String nombre;
+	@Column(name="last_name")
+	private String apellido;
 	private String address;
 	private String city;
 	private String telephone;
@@ -21,20 +24,21 @@ public class Owner {
 	public Owner() {
 		
 	}
-	public Owner(long id, String first_name, String last_name, String address, String city, String telephone) {
+
+	public Owner(long id, String nombre, String apellido, String address, String city, String telephone) {
 		super();
 		this.id = id;
-		this.first_name = first_name;
-		this.last_name = last_name;
+		this.nombre = nombre;
+		this.apellido = apellido;
 		this.address = address;
 		this.city = city;
 		this.telephone = telephone;
 	}
 
-	public Owner(String first_name, String last_name, String address, String city, String telephone) {
+	public Owner(String nombre, String apellido, String address, String city, String telephone) {
 		super();
-		this.first_name = first_name;
-		this.last_name = last_name;
+		this.nombre = nombre;
+		this.apellido = apellido;
 		this.address = address;
 		this.city = city;
 		this.telephone = telephone;
@@ -48,20 +52,20 @@ public class Owner {
 		this.id = id;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getApellido() {
+		return apellido;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 
 	public String getAddress() {
@@ -87,7 +91,12 @@ public class Owner {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "Owner [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", address=" + address + ", city="
+				+ city + ", telephone=" + telephone + "]";
+	}
+	
 
 }
