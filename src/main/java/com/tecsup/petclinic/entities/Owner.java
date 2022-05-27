@@ -4,9 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.GenerationType;
 
-@Entity(name = "owner")
+
+@Entity(name = "owners")
 public class Owner {
 		
 	@Id
@@ -14,36 +14,32 @@ public class Owner {
 	private long id;
 	private String first_name;
 	private String last_name;
-	private String adress;
+	private String address;
 	private String city;
-	private String phone;
+	private String telephone;
 	
-
-
-	public Owner(String first_name, String last_name, String adress, String city, String phone) {
-		super();
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.adress = adress;
-		this.city = city;
-		this.phone = phone;
+	public Owner() {
 		
 	}
-
-
-
-	public Owner(long id, String first_name, String last_name, String adress, String city, String phone) {
+	public Owner(long id, String first_name, String last_name, String address, String city, String telephone) {
 		super();
 		this.id = id;
 		this.first_name = first_name;
 		this.last_name = last_name;
-		this.adress = adress;
+		this.address = address;
 		this.city = city;
-		this.phone = phone;
+		this.telephone = telephone;
 	}
-	
-	
-	
+
+	public Owner(String first_name, String last_name, String address, String city, String telephone) {
+		super();
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.address = address;
+		this.city = city;
+		this.telephone = telephone;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -68,12 +64,12 @@ public class Owner {
 		this.last_name = last_name;
 	}
 
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getCity() {
@@ -84,26 +80,14 @@ public class Owner {
 		this.city = city;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getTelephone() {
+		return telephone;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-
-
-	@Override
-	public String toString() {
-		return "Owner [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", adress=" + adress
-				+ ", city=" + city + ", phone=" + phone + "]";
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 	
-	
 
-	
-	
-	
 
 }
